@@ -1,0 +1,59 @@
+Sure, here are some additional details for the classes and properties in the schema:
+
+School
+
+id: unique identifier for each school
+name: name of the school
+address: address of the school
+phone_number: phone number of the school
+created_at: date and time when the school record was created
+updated_at: date and time when the school record was last updated
+Class
+
+id: unique identifier for each class
+name: name of the class (e.g. "English 101")
+grade_level: grade level of the class (e.g. 9th grade)
+school_id: foreign key referencing the id of the School that the class belongs to
+created_at: date and time when the class record was created
+updated_at: date and time when the class record was last updated
+Teacher
+
+id: unique identifier for each teacher
+name: name of the teacher
+email: email address of the teacher
+password: password for the teacher's account
+class_id: foreign key referencing the id of the Class that the teacher teaches
+created_at: date and time when the teacher record was created
+updated_at: date and time when the teacher record was last updated
+Student
+
+id: unique identifier for each student
+name: name of the student
+email: email address of the student
+password: password for the student's account
+class_id: foreign key referencing the id of the Class that the student belongs to
+created_at: date and time when the student record was created
+updated_at: date and time when the student record was last updated
+Subject
+
+id: unique identifier for each subject
+name: name of the subject (e.g. "Mathematics")
+created_at: date and time when the subject record was created
+updated_at: date and time when the subject record was last updated
+ClassSubject
+
+id: unique identifier for each class-subject relationship
+class_id: foreign key referencing the id of the Class that the subject is taught in
+subject_id: foreign key referencing the id of the Subject that is taught in the class
+teacher_id: foreign key referencing the id of the Teacher who teaches the subject in the class
+created_at: date and time when the class-subject relationship was created
+updated_at: date and time when the class-subject relationship was last updated
+Grade
+
+id: unique identifier for each grade
+student_id: foreign key referencing the id of the Student who received the grade
+class_subject_id: foreign key referencing the id of the ClassSubject for which the grade was received
+grade_value: the value of the grade (e.g. 87.5)
+created_at: date and time when the grade was recorded
+updated_at: date and time when the grade was last updated
+

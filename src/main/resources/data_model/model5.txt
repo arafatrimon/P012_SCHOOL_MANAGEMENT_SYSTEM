@@ -1,0 +1,70 @@
+Sure, here are some additional classes and properties that could be included in a school management software schema:
+
+Parent
+
+id: unique identifier for each parent
+name: name of the parent
+email: email address of the parent
+password: password for the parent's account
+created_at: date and time when the parent record was created
+updated_at: date and time when the parent record was last updated
+Enrollment
+
+id: unique identifier for each enrollment
+student_id: foreign key referencing the id of the Student who is enrolled
+class_id: foreign key referencing the id of the Class in which the student is enrolled
+enrollment_date: date and time when the student was enrolled in the class
+created_at: date and time when the enrollment record was created
+updated_at: date and time when the enrollment record was last updated
+Attendance
+
+id: unique identifier for each attendance record
+student_id: foreign key referencing the id of the Student for whom attendance is being recorded
+class_subject_id: foreign key referencing the id of the ClassSubject for which attendance is being recorded
+attendance_date: date and time for which attendance is being recorded
+is_present: boolean value indicating whether the student was present or absent on the attendance date
+created_at: date and time when the attendance record was created
+updated_at: date and time when the attendance record was last updated
+Assignment
+
+id: unique identifier for each assignment
+class_subject_id: foreign key referencing the id of the ClassSubject for which the assignment was given
+teacher_id: foreign key referencing the id of the Teacher who gave the assignment
+due_date: date and time by which the assignment is due
+description: description of the assignment
+created_at: date and time when the assignment was created
+updated_at: date and time when the assignment was last updated
+Submission
+
+id: unique identifier for each submission
+student_id: foreign key referencing the id of the Student who submitted the assignment
+assignment_id: foreign key referencing the id of the Assignment that was submitted
+submitted_at: date and time when the assignment was submitted
+file_url: URL of the file containing the submission
+created_at: date and time when the submission record was created
+updated_at: date and time when the submission record was last updated
+Announcement
+
+id: unique identifier for each announcement
+class_subject_id: foreign key referencing the id of the ClassSubject for which the announcement is relevant
+teacher_id: foreign key referencing the id of the Teacher who posted the announcement
+announcement_date: date and time when the announcement was posted
+title: title of the announcement
+content: content of the announcement
+created_at: date and time when the announcement was created
+updated_at: date and time when the announcement was last updated
+Notification
+
+id: unique identifier for each notification
+user_id: foreign key referencing the id of the user for whom the notification is intended (e.g. a student or parent)
+notification_date: date and time when the notification was generated
+content: content of the notification
+is_read: boolean value indicating whether the notification has been read by the user
+
+
+
+Arafat Rimon
+more 
+​
+
+

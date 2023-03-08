@@ -1,0 +1,67 @@
+School
+- id (integer)
+- name (string)
+- address (string)
+- phone_number (string)
+- created_at (datetime)
+- updated_at (datetime)
+
+Class
+- id (integer)
+- name (string)
+- grade_level (integer)
+- school_id (integer) [foreign key]
+- created_at (datetime)
+- updated_at (datetime)
+
+Teacher
+- id (integer)
+- name (string)
+- email (string)
+- password (string)
+- class_id (integer) [foreign key]
+- created_at (datetime)
+- updated_at (datetime)
+
+Student
+- id (integer)
+- name (string)
+- email (string)
+- password (string)
+- class_id (integer) [foreign key]
+- created_at (datetime)
+- updated_at (datetime)
+
+Subject
+- id (integer)
+- name (string)
+- created_at (datetime)
+- updated_at (datetime)
+
+ClassSubject
+- id (integer)
+- class_id (integer) [foreign key]
+- subject_id (integer) [foreign key]
+- teacher_id (integer) [foreign key]
+- created_at (datetime)
+- updated_at (datetime)
+
+Grade
+- id (integer)
+- student_id (integer) [foreign key]
+- class_subject_id (integer) [foreign key]
+- grade_value (float)
+- created_at (datetime)
+- updated_at (datetime)
+
+In this schema, we have five main entities: School, Class, Teacher, Student, and Subject.
+
+Each School can have many Classes. Each Class belongs to one School, and can have many Teachers and Students. Each Teacher belongs to one Class, and can teach many Subjects. Each Student belongs to one Class, and can receive many Grades for each ClassSubject they are enrolled in.
+
+Subjects represent the different topics that can be taught in a class. Each Class can have many Subjects, and each Teacher can teach many Subjects.
+
+ClassSubject represents the relationship between a Class, a Subject, and a Teacher. Each Class can have many ClassSubjects, and each Subject can be taught in many ClassSubjects. Each Teacher can teach many ClassSubjects.
+
+Grades represent the performance of a Student in a particular ClassSubject. Each Student can have many Grades, and each ClassSubject can have many Grades for different Students.
+
+The remaining properties in each entity are just basic information that we might want to keep track of, such as name, email, password, phone_number, created_at, and updated_at.
